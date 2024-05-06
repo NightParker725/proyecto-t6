@@ -33,9 +33,9 @@ EMAIL_USE_TLS = True
 SECRET_KEY = 'django-insecure-%8is+7e63hl2^u)sxz&o#vn++!$hduclczn=gp&qk30m&w$r(('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost','icesi-freya.onrender']
+ALLOWED_HOSTS = ['127.0.0.1', 'icesi-freya.onrender.com']
 
 import environ
 
@@ -154,7 +154,7 @@ STATIC_URL = '/static/'
 # This production code might break development mode, so we check whether we're in DEBUG mode
 if not DEBUG:
     # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
     # and renames the files with unique names for each version to support long-term caching
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -165,7 +165,6 @@ if not DEBUG:
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#STATICFILES_DIRS = [
- #   os.path.join(BASE_DIR, 'static/'),
-  #  # otras rutas...
-#]
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
