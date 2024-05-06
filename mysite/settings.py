@@ -35,7 +35,7 @@ SECRET_KEY = 'django-insecure-%8is+7e63hl2^u)sxz&o#vn++!$hduclczn=gp&qk30m&w$r((
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost','icesi-freya.onrender']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost','icesi-freya.onrender']
 
 import environ
 
